@@ -49,12 +49,3 @@ jobs:
         inputs:
           pathtoPublish: '$(Build.ArtifactStagingDirectory)'
           artifactName: bugtracker
-      - task: AzureRmWebAppDeployment@4
-        inputs:
-          ConnectionType: 'AzureRM'
-          azureSubscription: 'Azure for Students(ebe0e043-9daa-42f3-976c-bcea78c9a2b9)'
-          appType: 'webAppLinux'
-          WebAppName: 'spring-on-azure'
-          packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-          RuntimeStack: 'JAVA|11-java11'
-          StartupCommand: 'java -jar app.jar'
